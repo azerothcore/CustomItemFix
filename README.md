@@ -73,7 +73,7 @@ Once installed correctly, you should:
 **Original Author**: Ethos (2008)
 
 Special thanks to:
-- Ona for inspiration
+- Ona (for motivation through criticism)
 - Halestorm for bug reporting and support
 - The WoW addon development community
 
