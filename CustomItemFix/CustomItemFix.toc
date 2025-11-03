@@ -1,7 +1,8 @@
-## Interface: 20400
-## Title: |cffff8000Custom Item Icon Fix|r
-## Version: 0.1.2
+## Interface: 30300
+## Title: CustomItemFix
+## Version: 0.1.3
 ## Notes: Enables icons on custom items
 ## Author: Ethos
-CustomItemFix.xml
 
+CustomItemFix.lua
+CustomItemFixSupport.lua
