@@ -213,7 +213,11 @@ end);
 local origItemLink;
 local function ContainerFrameItemButton_OnEnter_Hook(self)
 	-- DEFAULT_CHAT_FRAME:AddMessage("(ContainerFrameItemButton_OnEnter) "..tostring(self), 1.0, 1.0, 0.2, 1);
-	origItemLink = GetContainerItemLink(this:GetParent():GetID(), this:GetID());
+	-- `self`, not the global `this`: ContainerFrame_Update also calls this through the button's UpdateTooltip,
+	-- outside a script handler, where `this` is another frame (or nil) and its parent may be nil.
+	local button = self or this;
+	if not (button and button.GetParent and button:GetParent()) then return end
+	origItemLink = GetContainerItemLink(button:GetParent():GetID(), button:GetID());
 end
 local function ContainerFrameItemButton_OnClick_Hook(button)
 	local bagID = this:GetParent():GetID();
